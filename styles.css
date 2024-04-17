@@ -62,14 +62,17 @@ nav>ul {
 nav>ul>li {
     margin: 0.5em;
     padding: 0.8em;
-    background-color: var(--link);
-    border-radius: 0.4em;
 
     display: grid;
     align-items: center;
 }
 
-nav>ul>li:hover,
+.nav-item {
+    background-color: var(--link);
+    border-radius: 0.4em;
+}
+
+.nav-item:hover,
 .nav-current {
     background-color: var(--link-hovered);
 }
@@ -78,6 +81,39 @@ nav a {
     text-decoration: none;
     color: white;
 }
+
+.nav-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none;
+}
+
+
+@media screen and (max-width: 1000px) {
+    body {
+        background-color: orange;
+    }
+
+    .nav-menu {
+        display: block;
+    }
+
+    .nav-item {
+        display: none;
+    }
+
+    .mobile-nav[aria-expanded="true"] {
+        display: block;
+    }
+
+    .mobile-nav[aria-expanded="false"] {
+        display: none;
+    }
+}
+
 
 
 /*
@@ -100,14 +136,36 @@ h1 {
     font-size: 3em;
 }
 
+/*
+    icons
+*/
+.icon {
+    display: inline;
+    height: 0.8em;
+    width: 0.8em;
+}
+
+.icon.play {
+    content: url('src/icons/play.svg');
+}
+
+.icon.menu {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.nav-menu[aria-expanded="false"] > .icon.menu {
+    content: url('src/icons/menu.svg');
+}
+
+.nav-menu[aria-expanded="true"] > .icon.menu {
+    content: url('src/icons/openmenu.svg');
+}
+
 
 /*
     gallery
 */
-
-.gallery * {
-    border: 2px solid salmon;
-}
 
 .gallery {
     display: grid;
@@ -120,47 +178,54 @@ h1 {
     grid-template-areas:
         "image"
         "figcaption";
+}
 
-    align-items: start;
+.image-container {
+    grid-area: "image";
+
+    height: 500px;
+    width: 100%;
     justify-items: center;
+
+    display: grid;
+    grid-template-columns: auto;
 
     /* hide image-description, when it is over the item */
     overflow: hidden;
     position: relative;
 }
 
+.image-container img {
+    grid-column: 1;
 
-.gallery-item img {
-    z-index: 0;
-    height: 500px;
+    height: 100%;
     width: auto;
-    object-fit: cover;
 
-    grid-area: image;
-
-    border: 2px solid red;
+    z-index: 0;
 }
 
 /* overlay of the image with a description of the image */
 .image-description {
-    padding: 20px;
+    grid-column: 1;
+
     text-align: center;
     background-color: var(--field-transparent);
-    top: 0;
-    height: 500px;
-    width: 100%;
+    padding: 1em;
+    height: 100%;
 
-    grid-area: image;
-
-    opacity: 0;
+    opacity: 1;
     z-index: 2;
     position: absolute;
     transform: translateY(100%);
     transition: opacity 0s ease, transform 1s ease;
 }
 
-.gallery-item:hover>.image-description {
-    opacity: 1;
+.image-container:hover>.image-description {
     z-index: 2;
     transform: translateY(0%);
+}
+
+.figcaption {
+    text-align: center;
+    padding: 0.5em;
 }
