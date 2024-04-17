@@ -1,0 +1,166 @@
+/* font Roboto from fonts.google.com */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    /* colors */
+    --link: #598aeb;
+    --link-hovered: #59e4ea;
+    --field: #a7e8eb;
+    --field-transparent: #a7e8ebcc;
+
+    /* sizes */
+    --margin-side: 50px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    font-family: "Roboto";
+    color: black;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+/*
+    header
+*/
+
+header {
+    margin-top: 1em;
+    padding: 4px var(--margin-side);
+
+    background-color: var(--field);
+    height: auto;
+
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr auto;
+    grid-auto-flow: column;
+
+    align-items: center;
+}
+
+.title {
+    font-size: 2.8em;
+    text-decoration: none;
+}
+
+nav>ul {
+    list-style-type: none;
+
+    align-content: center;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav>ul>li {
+    margin: 0.5em;
+    padding: 0.8em;
+    background-color: var(--link);
+    border-radius: 0.4em;
+
+    display: grid;
+    align-items: center;
+}
+
+nav>ul>li:hover,
+.nav-current {
+    background-color: var(--link-hovered);
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*
+    content
+*/
+
+main {
+    margin: var(--margin-side);
+}
+
+.site-description {
+    margin-bottom: 2em;
+}
+
+
+h1 {
+    margin-bottom: 1rem;
+
+    font-weight: inherit;
+    font-size: 3em;
+}
+
+
+/*
+    gallery
+*/
+
+.gallery * {
+    border: 2px solid salmon;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 10px;
+}
+
+.gallery-item {
+    display: grid;
+    grid-template-areas:
+        "image"
+        "figcaption";
+
+    align-items: start;
+    justify-items: center;
+
+    /* hide image-description, when it is over the item */
+    overflow: hidden;
+    position: relative;
+}
+
+
+.gallery-item img {
+    z-index: 0;
+    height: 500px;
+    width: auto;
+    object-fit: cover;
+
+    grid-area: image;
+
+    border: 2px solid red;
+}
+
+/* overlay of the image with a description of the image */
+.image-description {
+    padding: 20px;
+    text-align: center;
+    background-color: var(--field-transparent);
+    top: 0;
+    height: 500px;
+    width: 100%;
+
+    grid-area: image;
+
+    opacity: 0;
+    z-index: 2;
+    position: absolute;
+    transform: translateY(100%);
+    transition: opacity 0s ease, transform 1s ease;
+}
+
+.gallery-item:hover>.image-description {
+    opacity: 1;
+    z-index: 2;
+    transform: translateY(0%);
+}
