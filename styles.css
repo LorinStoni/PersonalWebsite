@@ -57,19 +57,16 @@ nav>ul {
 
     display: flex;
     flex-wrap: wrap;
-}
-
-nav>ul>li {
-    margin: 0.5em;
-    padding: 0.8em;
-
-    display: grid;
-    align-items: center;
+    gap: 1em;
 }
 
 .nav-item {
+    padding: 0.8em;
     background-color: var(--link);
     border-radius: 0.4em;
+
+    display: grid;
+    align-items: center;
 }
 
 .nav-item:hover,
@@ -88,29 +85,38 @@ nav a {
 }
 
 .mobile-nav {
+    margin-top: 1em;
+
     display: none;
+    margin-left: var(--margin-side);
+    margin-right: var(--margin-side);
 }
 
 
-@media screen and (max-width: 1000px) {
-    body {
-        background-color: orange;
-    }
+@media screen and (max-width: 800px) {
 
     .nav-menu {
         display: block;
     }
 
-    .nav-item {
+    header .nav-item {
         display: none;
     }
 
-    .mobile-nav[aria-expanded="true"] {
+    .mobile-nav {
         display: block;
     }
 
     .mobile-nav[aria-expanded="false"] {
-        display: none;
+        height: 0;
+        transform: rotateX(90deg);
+        transition: all 0.5s;
+    }
+
+    .mobile-nav[aria-expanded="true"] {
+        max-height: auto;
+        transform: rotateX(0deg);
+        transition: all 0.5s;
     }
 }
 
@@ -142,7 +148,7 @@ h1 {
 .icon {
     display: inline;
     height: 0.8em;
-    width: 0.8em;
+    width: auto;
 }
 
 .icon.play {
@@ -154,11 +160,11 @@ h1 {
     width: 1.5em;
 }
 
-.nav-menu[aria-expanded="false"] > .icon.menu {
+.nav-menu[aria-expanded="false"]>.icon.menu {
     content: url('src/icons/menu.svg');
 }
 
-.nav-menu[aria-expanded="true"] > .icon.menu {
+.nav-menu[aria-expanded="true"]>.icon.menu {
     content: url('src/icons/openmenu.svg');
 }
 
@@ -170,7 +176,7 @@ h1 {
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 10px;
+    grid-gap: 1em;
 }
 
 .gallery-item {
@@ -178,10 +184,11 @@ h1 {
     grid-template-areas:
         "image"
         "figcaption";
+    justify-items: stretch;
 }
 
 .image-container {
-    grid-area: "image";
+    grid-area: image;
 
     height: 500px;
     width: 100%;
@@ -228,4 +235,16 @@ h1 {
 .figcaption {
     text-align: center;
     padding: 0.5em;
+}
+
+@media screen and (max-width: 800px) {
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        grid-gap: 10px;
+    }
+
+    .image-container {
+        height: 400px;
+    }
 }
