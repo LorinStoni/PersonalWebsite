@@ -1,5 +1,13 @@
 /* font Roboto from fonts.google.com */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@font-face {
+    font-family: "Roboto Regular";
+    src: url("src/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+}
+
+@font-face {
+    font-family: "Roboto Thin";
+    src: url("src/fonts/Roboto/Roboto-Thin.ttf") format('truetype');
+}
 
 :root {
     /* colors */
@@ -10,6 +18,7 @@
 
     /* sizes */
     --margin-side: 50px;
+    --border-radius: 5px;
 }
 
 
@@ -17,12 +26,47 @@
     margin: 0;
     padding: 0;
 
-    font-family: "Roboto";
+    font-family: "Roboto Regular";
     color: black;
 }
 
 p {
     font-size: 20px;
+}
+
+/* all links in lists (e.g. in navigations) */
+li>a {
+    text-decoration: none;
+    color: white;
+
+    border-radius: var(--border-radius);
+    background-color: var(--link);
+
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+li>a::before {
+    content: '';
+    border-radius: var(--border-radius);
+    background-color: var(--link-hovered);
+
+    width: 0%;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    transition: all 0.5s;
+    z-index: -1;
+}
+
+li>a:hover::before {
+    width: 100%;
+    transition: all 0.5s;
 }
 
 
@@ -50,6 +94,11 @@ header {
     text-decoration: none;
 }
 
+
+/*
+    navigation
+*/
+
 nav>ul {
     list-style-type: none;
 
@@ -60,39 +109,26 @@ nav>ul {
     gap: 1em;
 }
 
-.nav-link {
-    text-decoration: none;
-    color: white;
 
+nav a {
     padding: 14px;
-    border-radius: 5px;
-
-    background-color: var(--link);
-
-    display: inline-block;
-    align-items: center;
-
-    /* slide animation */
-    box-shadow: inset 0 0 0 0 var(--link-hovered);
-    transition: ease-in-out 0.5s;
 }
 
-.nav-link:hover,
-.nav-link:focus {
-    box-shadow: inset 150px 0 0 0 var(--link-hovered);
-}
-
-.nav-current {
+nav a.current {
     background-color: var(--link-hovered);
 }
 
-.nav-menu {
+/*
+    mobile navigation
+*/
+
+.nav-menu-icon {
     display: none;
     cursor: pointer;
 }
 
 .mobile-nav {
-    margin-top: 1em;
+    margin-top: 2em;
 
     display: none;
     margin-left: var(--margin-side);
@@ -102,11 +138,11 @@ nav>ul {
 
 @media screen and (max-width: 800px) {
 
-    .nav-menu {
+    .nav-menu-icon {
         display: block;
     }
 
-    header .nav-link {
+    header nav li a {
         display: none;
     }
 
@@ -126,7 +162,6 @@ nav>ul {
         transition: all 0.5s;
     }
 }
-
 
 
 /*
@@ -150,15 +185,25 @@ h1 {
     font-size: 3em;
 }
 
-.home-nav>ul {
+main>nav>ul {
     justify-content: right;
+    flex-direction: column;
+    gap: 50px;
+}
+
+main>nav li {
+    width: 100%;
 }
 
 .large-link {
-    width: 60%;
+    width: 100px;
     height: 2em;
-    
+    padding: 20px;
+    margin: 10px;
+
+    background-color: var(--link);
 }
+
 
 /*
     icons
@@ -178,11 +223,11 @@ h1 {
     width: 1.5em;
 }
 
-.nav-menu[aria-expanded="false"]>.icon.menu {
+.nav-menu-icon[aria-expanded="false"]>.icon.menu {
     content: url('src/icons/menu.svg');
 }
 
-.nav-menu[aria-expanded="true"]>.icon.menu {
+.nav-menu-icon[aria-expanded="true"]>.icon.menu {
     content: url('src/icons/openmenu.svg');
 }
 

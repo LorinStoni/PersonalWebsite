@@ -17,18 +17,18 @@
         <nav>
             <ul>
                 <li>
-                    <a class="nav-link" href="aboutMe.html">Über mich</a>
+                    <a href="aboutMe.html">Über mich</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="abilities.html">Fähigkeiten</a>
+                    <a href="abilities.html">Fähigkeiten</a>
                 </li>
                 <li>
-                    <a class="nav-link nav-current" href="">Portfolio</a>
+                    <a class="current" href="portfolio.html">Portfolio</a>
                 </li>
                 <li>
-                    <a class="nav-link" href="contact.html">Kontakt</a>
+                    <a href="contact.html">Kontakt</a>
                 </li>
-                <li class="nav-menu" aria-expanded="false">
+                <li class="nav-menu-icon" aria-expanded="false">
                     <i class="icon menu"></i>
                 </li>
             </ul>
@@ -37,10 +37,18 @@
 
     <nav class="mobile-nav" aria-expanded="false">
         <ul>
-            <li class="nav-link"><a href="">Über mich</a></li>
-            <li class="nav-link"><a href="">Fähigkeiten</a></li>
-            <li class="nav-link nav-current"><a href="">Portfolio</a></li>
-            <li class="nav-link"><a href="">Kontakt</a></li>
+            <li>
+                <a href="aboutMe.html">Über mich</a>
+            </li>
+            <li>
+                <a href="abilities.html">Fähigkeiten</a>
+            </li>
+            <li>
+                <a class="current" href="portfolio.html">Portfolio</a>
+            </li>
+            <li>
+                <a href="contact.html">Kontakt</a>
+            </li>
         </ul>
     </nav>
 
@@ -153,7 +161,7 @@
     </main>
 
     <script>
-        const navMenu = document.querySelector('.nav-menu');
+        const navMenu = document.querySelector('.nav-menu-icon');
         const mobileNavigation = document.querySelector('.mobile-nav');
 
         function toggleNavigationVisibility() {
