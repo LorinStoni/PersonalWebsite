@@ -36,6 +36,8 @@ p {
 
 /* all links in lists (e.g. in navigations) */
 li>a {
+    display: block;
+    
     text-decoration: none;
     color: white;
 
@@ -186,22 +188,29 @@ h1 {
 }
 
 main>nav>ul {
-    justify-content: right;
     flex-direction: column;
-    gap: 50px;
+    align-content: flex-end;
+    gap: 20px;
 }
 
 main>nav li {
-    width: 100%;
+    width: 60%;
 }
 
 .large-link {
-    width: 100px;
-    height: 2em;
+    font-size: 2em;
+    text-align: right;
+
     padding: 20px;
-    margin: 10px;
 
     background-color: var(--link);
+    align-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    main>nav li {
+        width: 100%;
+    }
 }
 
 
