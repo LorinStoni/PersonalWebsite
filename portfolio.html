@@ -7,6 +7,7 @@
     <title>Lorin Steiner - Portfolio</title>
 
     <link rel="stylesheet" href="styles.css">
+    <script defer src="menuScript.js"></script>
 </head>
 
 <body>
@@ -64,7 +65,7 @@
                 <div class="image-container">
                     <img src="src/images/java_calculator.png"
                         alt="Grafisches Taschenrechner-Programm mit den Operationen Addition, Subtraktion, Multiplikation, Division und Potenz">
-                    <p class="image-description">
+                    <p>
                         In Java programmierte ich einen Taschenrechner mit einem
                         GUI (Graphical User Interface). Dafür verwendete ich Swing.
                     </p>
@@ -79,7 +80,7 @@
                     Personenverwaltung in einer weissen Konsole mit acht Menu-Punkten.
                     Es wird eine Person namens Jasmine Musterfrau hinzugefügt, die am 27.09.2002 geboren ist.
                     Dabei wird ein falsches Geburtsdatum eingegeben und das Programm fragt nochmals nach dem Datum.">
-                    <p class="image-description">
+                    <p>
                         In Java schrieb ich ausserdem eine Personenverwaltung,
                         in der man Personen erstellen, löschen, bearbeiten,
                         speichern, laden und anzeigen kann.
@@ -95,7 +96,7 @@
                     Personenverwaltung in einer schwarzen Konsole mit acht Menu-Punkten.
                     Es wird eine Person namens Jasmine Musterfrau hinzugefügt, die am 27.09.2002 geboren ist.
                     Dabei wird ein falsches Geburtsdatum eingegeben und das Programm fragt nochmals nach dem Datum.">
-                    <p class="image-description">
+                    <p>
                         Die gleiche Personenverwaltung
                         wie in Java schrieb ich auch in C.
                     </p>
@@ -109,7 +110,7 @@
                     <img src="src/images/c_peoplemanagement.png" alt="
                     Ein Computerspiel, bei dem der Spieler ein Ritter ist und durch Wiesen und Wälder läuft.
                     Es erscheinen dabei Skelette, die den Spieler angreifen wollen">
-                    <p class="image-description">
+                    <p>
                         “car chase” war mein erstes Spiel, das ich selbstständig ohne Tutorial
                         in der Godot Game Engine programmiert hatte.
                     </p>
@@ -123,9 +124,8 @@
             </div>
             <div class="gallery-item">
                 <div class="image-container">
-                    <img src="" alt="
-                    ">
-                    <p class="image-description">
+                    <img src="" alt="">
+                    <p>
                         “knightblade” war das Computerspiel, das ich für die Projektarbeit
                         in der dritten Sekundarschule programmiert hatte.
                         In diesem kann man gegen Skelette kämpfen, Steaks von Kühen essen
@@ -143,7 +143,7 @@
             <div class="gallery-item">
                 <div class="image-container">
                     <img src="src/videos/knightblade_01.mp4" alt="">
-                    <p class="image-description">
+                    <p>
                         In “knightblade” kann man auch in Arenen gegen Skelette
                         in verschiedenen Wellen kämpfen. Dafür bekommt man als Belohnung Bücher,
                         welche dem Spieler gute Fähigkeiten verleihen (z.B. Stärke).
@@ -159,22 +159,6 @@
             </div>
         </div>
     </main>
-
-    <script>
-        const navMenu = document.querySelector('.nav-menu-icon');
-        const mobileNavigation = document.querySelector('.mobile-nav');
-
-        function toggleNavigationVisibility() {
-            const expanded = navMenu.getAttribute('aria-expanded') === "true" || false;
-            navMenu.setAttribute('aria-expanded', !expanded);
-            mobileNavigation.setAttribute('aria-expanded', !expanded);
-        }
-
-        const menuIcon = document.querySelector('.icon.menu');
-        console.log(menuIcon);
-        menuIcon.addEventListener('click', toggleNavigationVisibility);
-    </script>
-
 
 </body>
 
