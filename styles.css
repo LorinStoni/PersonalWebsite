@@ -36,6 +36,7 @@
     font-family: "Roboto Regular", sans-serif;
     color: black;
     font-size: 20px;
+    box-sizing: border-box;
 }
 
 p {
@@ -59,7 +60,6 @@ li>a {
 
 li>a::before {
     content: '';
-    border-radius: var(--border-radius);
     background-color: var(--link-hovered);
 
     width: 0%;
@@ -258,7 +258,7 @@ main>nav li {
     padding: 0;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1000px) {
 
     main>nav li {
         width: 100%;
@@ -273,6 +273,7 @@ main>nav li {
     }
 }
 
+/* a list of fields (e.g. pairs) */
 ul.fields-list {
     display: flex;
     flex-direction: column;
@@ -282,6 +283,7 @@ ul.fields-list {
     list-style: none;
 }
 
+/* pair of an image and a description */
 .pair {
     display: grid;
     grid-template-columns: 2fr minmax(auto, 1fr);
@@ -310,7 +312,7 @@ ul.fields-list {
 
 /* smaller when the pair is in a fields-list (abilities) */
 ul.fields-list .pair>.image-container>img {
-    max-height: 20vh;
+    max-height: 15vh;
 }
 
 .pair>.image-container>img {
@@ -341,7 +343,6 @@ ul.fields-list .pair>.image-container>img {
     text-align: left;
 }
 
-
 @media screen and (max-width: 800px) {
 
     .pair.column-on-responsive {
@@ -358,7 +359,7 @@ ul.fields-list .pair>.image-container>img {
     .pair>.disappear-on-responsive~* {
         grid-column: 1 / -1;
     }
-    
+
     .pair>.disappear-on-responsive~.description * {
         text-align: left;
     }
@@ -366,7 +367,7 @@ ul.fields-list .pair>.image-container>img {
     .pair>.image-container>img {
         height: auto;
         width: 100%;
-        max-width: 400px;
+        max-height: 10vh;
     }
 
     .pair>.description {
@@ -376,8 +377,45 @@ ul.fields-list .pair>.image-container>img {
 
 
 /*
+    opening grid
+*/
+.opening-grid {
+    list-style-type: none;
+
+    display: grid;
+    gap: 1em;
+}
+
+.opening-grid * {
+    color: white;
+}
+
+.opening-grid>li {
+    background-color: var(--link);
+    border-radius: var(--border-radius);
+
+    padding: 0.5em;
+}
+
+.opening-grid>li>*:nth-child(2) {
+    display: none;
+}
+
+.opening-grid>li:hover *:nth-child(2) {
+    display: inline;
+}
+
+.opening-grid>li:hover *:first-child {
+    display: none;
+    opacity: 0;
+}
+
+
+
+/*
     icons
 */
+
 .icon {
     display: inline;
     height: 0.8em;
@@ -452,15 +490,17 @@ ul.fields-list .pair>.image-container>img {
     text-align: center;
     text-wrap: balance;
     background-color: var(--field-transparent);
-    padding: 1em;
+
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
 
     opacity: 1;
     z-index: 2;
     position: absolute;
     transform: translateY(100%);
-    transition: opacity 0s ease, transform 1s ease;
+    transition: transform 1s ease;
 }
 
 .image-container:hover>p {
