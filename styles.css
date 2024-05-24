@@ -15,6 +15,8 @@
     --link-hovered: #59e4ea;
     --field: #a7e8eb;
     --field-transparent: #a7e8ebcc;
+    --input-field: var(--field);
+    --input-field-border: #2a457a;
 
     /* sizes */
     --margin-side: 2rem;
@@ -44,7 +46,7 @@ p {
 }
 
 /* all links in lists (e.g. in navigations) */
-li>a {
+nav li>a {
     display: block;
 
     text-decoration: none;
@@ -58,7 +60,7 @@ li>a {
     z-index: 1;
 }
 
-li>a::before {
+nav li>a::before {
     content: '';
     background-color: var(--link-hovered);
 
@@ -74,7 +76,7 @@ li>a::before {
     z-index: -1;
 }
 
-li>a:hover::before {
+nav li>a:hover::before {
     width: 100%;
     transition: all 0.5s;
 }
@@ -383,32 +385,75 @@ ul.fields-list .pair>.image-container>img {
     list-style-type: none;
 
     display: grid;
-    gap: 1em;
+    gap: 0.5em;
 }
 
 .opening-grid * {
     color: white;
+    text-align: right;
 }
 
-.opening-grid>li {
+.opening-grid>.one-element {
     background-color: var(--link);
     border-radius: var(--border-radius);
 
     padding: 0.5em;
+    width: 50%;
+    justify-self: right;
 }
 
-.opening-grid>li>*:nth-child(2) {
+.opening-grid>.one-element>*:nth-child(2) {
     display: none;
 }
 
-.opening-grid>li:hover *:nth-child(2) {
+.opening-grid>.one-element:hover>*:nth-child(2) {
     display: inline;
 }
 
-.opening-grid>li:hover *:first-child {
+.opening-grid>.one-element:hover>*:first-child {
     display: none;
-    opacity: 0;
 }
+
+.contact-form>p {
+    background-color: var(--link);
+    border-radius: var(--border-radius);
+
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+}
+
+.contact-form>form {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr) 2fr;
+    gap: 0.5em;
+}
+
+.contact-form>form * {
+    text-align: left;
+}
+
+.contact-form>form>*:not(.left, .right) {
+    grid-column: 1 / -1;
+}
+
+.contact-form>p:hover form {
+    display: grid;
+}
+
+input,
+textarea {
+    background-color: var(--input-field);
+    padding: 1em;
+    border: 1px solid var(--input-field-border);
+    border-radius: var(--border-radius);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: white;    
+}
+
 
 
 
