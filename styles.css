@@ -314,7 +314,7 @@ ul.fields-list {
 
 /* smaller when the pair is in a fields-list (abilities) */
 ul.fields-list .pair>.image-container>img {
-    max-height: 15vh;
+    max-height: 50vh;
 }
 
 .pair>.image-container>img {
@@ -506,13 +506,12 @@ textarea::placeholder {
 .image-container {
     grid-area: image;
 
-    height: 500px;
+    height: 50vh;
     width: 100%;
-    justify-items: center;
-    align-items: center;
+    justify-content: center;
+    align-content: center;
 
-    display: grid;
-    grid-template-columns: auto;
+    display: flex;
 
     /* hide image-description, when it is over the item */
     overflow: hidden;
@@ -522,8 +521,9 @@ textarea::placeholder {
 .image-container img {
     grid-column: 1;
 
-    height: 100%;
-    width: auto;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
 
     z-index: 0;
 }
