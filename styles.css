@@ -17,6 +17,8 @@
     --field-transparent: #a7e8ebcc;
     --input-field: var(--field);
     --input-field-border: #2a457a;
+    --input-button: #2a457a;
+    --input-button-hovered: #3b60ac;
 
     /* sizes */
     --margin-side: 2rem;
@@ -45,8 +47,38 @@ p {
     font-size: 1em;
 }
 
+
+/*
+    icons
+*/
+
+.icon {
+    display: inline;
+    height: 0.8em;
+    width: auto;
+}
+
+.icon.play {
+    content: url('src/icons/play.svg');
+}
+
+.icon.menu {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+.nav-menu-icon[aria-expanded="false"]>.icon.menu {
+    content: url('src/icons/menu.svg');
+}
+
+.nav-menu-icon[aria-expanded="true"]>.icon.menu {
+    content: url('src/icons/openmenu.svg');
+}
+
+
 /* all links in lists (e.g. in navigations) */
-nav li>a {
+nav li>a,
+.hover-effect.slide-in {
     display: block;
 
     text-decoration: none;
@@ -60,7 +92,8 @@ nav li>a {
     z-index: 1;
 }
 
-nav li>a::before {
+nav li>a::before,
+.hover-effect.slide-in::before {
     content: '';
     background-color: var(--link-hovered);
 
@@ -76,7 +109,8 @@ nav li>a::before {
     z-index: -1;
 }
 
-nav li>a:hover::before {
+nav li>a:hover::before,
+.hover-effect.slide-in:hover:before {
     width: 100%;
     transition: all 0.5s;
 }
@@ -147,8 +181,6 @@ nav a.current {
 }
 
 .mobile-nav {
-    margin-top: 2em;
-
     display: none;
     margin-left: var(--margin-side);
     margin-right: var(--margin-side);
@@ -185,7 +217,9 @@ nav a.current {
     }
 
     .mobile-nav[aria-expanded="true"] {
+        margin-top: 2em;
         height: auto;
+
         transform: rotateX(0deg);
         transition: all 0.5s;
     }
@@ -285,228 +319,14 @@ ul.fields-list {
     list-style: none;
 }
 
-/* pair of an image and a description */
-.pair {
-    display: grid;
-    grid-template-columns: 2fr minmax(auto, 1fr);
-    gap: 2em;
-
-    height: auto;
-
-    align-items: stretch;
-    justify-items: stretch;
-}
-
-.pair.image-first {
-    grid-template-areas: "image description";
-    grid-template-columns: auto 1fr;
-}
-
-.pair.description-first {
-    grid-template-areas: "description image";
-    grid-template-columns: 1fr auto;
-}
-
-.pair>.image-container {
-    grid-area: "image";
-    height: auto;
-}
-
-/* smaller when the pair is in a fields-list (abilities) */
-ul.fields-list .pair>.image-container>img {
-    max-height: 50vh;
-}
-
-.pair>.image-container>img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-
-    border-radius: var(--border-radius);
-}
-
-.pair>.description {
-    background-color: var(--field);
-    padding: 1em 2em;
-    border-radius: var(--border-radius);
-
-    align-content: center;
-}
-
-.pair.image-first>.description * {
-    text-align: right;
-}
-
-.pair>.description *:not(.key-word):not(:last-child) {
-    padding-bottom: 0.5em;
-}
-
-.pair.description-first>.description * {
-    text-align: left;
-}
-
-@media screen and (max-width: 800px) {
-
-    .pair.column-on-responsive {
-        grid-template-columns: 100%;
-        grid-template-rows: auto 1fr;
-        grid-auto-flow: column;
-        width: 100%;
-    }
-
-    .pair>.disappear-on-responsive {
-        display: none;
-    }
-
-    .pair>.disappear-on-responsive~* {
-        grid-column: 1 / -1;
-    }
-
-    .pair>.disappear-on-responsive~.description * {
-        text-align: left;
-    }
-
-    .pair>.image-container>img {
-        height: auto;
-        width: 100%;
-        max-height: 10vh;
-    }
-
-    .pair>.description {
-        padding: 1em;
-    }
-}
-
-
 /*
-    opening grid
+    container for image and text that appears on hover
 */
-.opening-grid {
-    list-style-type: none;
-
-    display: grid;
-    gap: 0.5em;
-}
-
-.opening-grid * {
-    color: white;
-    text-align: right;
-}
-
-.opening-grid>.one-element {
-    background-color: var(--link);
-    border-radius: var(--border-radius);
-
-    padding: 0.5em;
-    width: 50%;
-    justify-self: right;
-}
-
-.opening-grid>.one-element>*:nth-child(2) {
-    display: none;
-}
-
-.opening-grid>.one-element:hover>*:nth-child(2) {
-    display: inline;
-}
-
-.opening-grid>.one-element:hover>*:first-child {
-    display: none;
-}
-
-.contact-form>p {
-    background-color: var(--link);
-    border-radius: var(--border-radius);
-
-    margin-bottom: 0.5em;
-    padding: 0.5em;
-}
-
-.contact-form>form {
-    display: none;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr) 2fr;
-    gap: 0.5em;
-}
-
-.contact-form>form * {
-    text-align: left;
-}
-
-.contact-form>form>*:not(.left, .right) {
-    grid-column: 1 / -1;
-}
-
-.contact-form>p:hover form {
-    display: grid;
-}
-
-input,
-textarea {
-    background-color: var(--input-field);
-    padding: 1em;
-    border: 1px solid var(--input-field-border);
-    border-radius: var(--border-radius);
-}
-
-input::placeholder,
-textarea::placeholder {
-    color: white;    
-}
-
-
-
-
-/*
-    icons
-*/
-
-.icon {
-    display: inline;
-    height: 0.8em;
-    width: auto;
-}
-
-.icon.play {
-    content: url('src/icons/play.svg');
-}
-
-.icon.menu {
-    height: 1.5em;
-    width: 1.5em;
-}
-
-.nav-menu-icon[aria-expanded="false"]>.icon.menu {
-    content: url('src/icons/menu.svg');
-}
-
-.nav-menu-icon[aria-expanded="true"]>.icon.menu {
-    content: url('src/icons/openmenu.svg');
-}
-
-
-/*
-    gallery
-*/
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 1em;
-}
-
-.gallery-item {
-    display: grid;
-    grid-template-areas:
-        "image"
-        "figcaption";
-    justify-items: stretch;
-}
 
 .image-container {
     grid-area: image;
 
-    height: 50vh;
+    height: 40vh;
     width: 100%;
     justify-content: center;
     align-content: center;
@@ -553,6 +373,140 @@ textarea::placeholder {
     transform: translateY(0%);
 }
 
+@media screen and (max-width: 1000px) {
+
+    .image-container {
+        height: auto;
+        width: 100%;
+    }
+}
+
+
+/*
+    pair of an image and a description
+*/
+.pair {
+    display: grid;
+    grid-template-columns: 2fr minmax(auto, 1fr);
+    gap: 2em;
+
+    height: auto;
+
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+.pair.image-first {
+    grid-template-areas: "image description";
+    grid-template-columns: auto 1fr;
+}
+
+.pair.description-first {
+    grid-template-areas: "description image";
+    grid-template-columns: 1fr auto;
+}
+
+.pair>.image-container {
+    grid-area: "image";
+    height: auto;
+}
+
+/* smaller when the pair is in a fields-list (abilities) */
+ul.fields-list .pair>.image-container>img {
+    max-height: 20vh;
+}
+
+.pair>.image-container>img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+
+    border-radius: var(--border-radius);
+}
+
+.pair>.description {
+    background-color: var(--field);
+    padding: 1em 2em;
+    border-radius: var(--border-radius);
+
+    align-content: center;
+}
+
+.pair.image-first>.description * {
+    text-align: right;
+}
+
+.pair>.description *:not(.key-word):not(:last-child) {
+    padding-bottom: 0.5em;
+}
+
+.pair.description-first>.description * {
+    text-align: left;
+}
+
+@media screen and (max-width: 1400px) {
+
+    .pair>.image-container>img {
+        max-width: 20vb;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .pair.column-on-responsive {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-auto-flow: column;
+        width: 100%;
+    }
+
+    .pair>.disappear-on-responsive {
+        display: none;
+    }
+
+    .pair>.disappear-on-responsive~* {
+        grid-column: 1 / -1;
+    }
+
+    .pair>.disappear-on-responsive~.description * {
+        text-align: left;
+    }
+
+    .pair>.image-container {
+        width: 100%;
+    }
+
+    .pair>.image-container>img {
+        all: unset;
+        width: 80%;
+        max-width: 25vb;
+        background-color: purple;
+    }
+
+    .pair>.description {
+        padding: 1em;
+    }
+}
+
+
+/*
+    gallery
+*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    grid-gap: 2em;
+}
+
+.gallery-item {
+    display: grid;
+    grid-template-areas:
+        "image"
+        "figcaption";
+    justify-items: stretch;
+}
+
 .figcaption {
     text-align: center;
     padding: 0.5em;
@@ -561,11 +515,123 @@ textarea::placeholder {
 @media screen and (max-width: 800px) {
 
     .gallery {
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-gap: 10px;
+        grid-template-columns: repeat(auto-fit, 100%);
+        grid-gap: 1em;
     }
 
-    .image-container {
-        height: 400px;
+    .gallery-item {
+        grid-template-rows: auto auto;
+    }
+}
+
+
+/*
+    opening grid (
+*/
+.opening-grid {
+    list-style-type: none;
+
+    display: grid;
+    gap: 0.5em;
+}
+
+.opening-grid * {
+    color: white;
+    text-align: right;
+}
+
+.opening-grid>.one-element {
+    background-color: var(--link);
+    border-radius: var(--border-radius);
+
+    padding: 0.75em;
+    width: 50%;
+    justify-self: right;
+}
+
+.opening-grid>.one-element>*:nth-child(2) {
+    display: none;
+}
+
+.opening-grid>.one-element:hover>*:nth-child(2) {
+    display: inline;
+}
+
+.opening-grid>.one-element:hover>*:first-child {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+
+    .opening-grid>.one-element {
+        width: 100%;
+    }
+}
+
+.contact-form>button {
+    all: unset;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: var(--link);
+    border-radius: var(--border-radius);
+
+    margin-bottom: 0.5em;
+    padding: 0.75em;
+}
+
+.contact-form>form {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, auto) 1fr;
+    gap: 0.5em;
+}
+
+.contact-form>form * {
+    text-align: left;
+}
+
+.contact-form>form>*:not(.left, .right) {
+    grid-column: 1 / -1;
+}
+
+.contact-form form[aria-expanded="true"] {
+    display: grid;
+}
+
+.contact-form form[aria-expanded="false"] {
+    display: none;
+}
+
+form>input,
+form>textarea,
+form>button {
+    background-color: var(--input-field);
+    padding: 1em;
+    border: 1px solid var(--input-field-border);
+    border-radius: var(--border-radius);
+}
+
+form>button {
+    cursor: pointer;
+    background-color: var(--input-button) !important;
+}
+
+form>button::before {
+    background-color: var(--input-button-hovered) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+@media screen and (max-width: 800px) {
+
+    .contact-form>form>* {
+        grid-column: 1 / -1;
     }
 }
