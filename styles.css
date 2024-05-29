@@ -373,11 +373,10 @@ ul.fields-list {
     transform: translateY(0%);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
 
     .image-container {
-        height: auto;
-        width: 100%;
+        width: 80%;
     }
 }
 
@@ -494,6 +493,8 @@ ul.fields-list .pair>.image-container>img {
 */
 
 .gallery {
+    justify-content: center;
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     grid-gap: 2em;
@@ -504,12 +505,19 @@ ul.fields-list .pair>.image-container>img {
     grid-template-areas:
         "image"
         "figcaption";
-    justify-items: stretch;
+    justify-items: center;
 }
 
 .figcaption {
     text-align: center;
     padding: 0.5em;
+}
+
+@media screen and (max-width: 1200px) {
+
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
 }
 
 @media screen and (max-width: 800px) {
