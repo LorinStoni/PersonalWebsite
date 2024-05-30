@@ -412,7 +412,7 @@ ul.fields-list {
 
 /* smaller when the pair is in a fields-list (abilities) */
 ul.fields-list .pair>.image-container>img {
-    max-height: 20vh;
+    height: 15vh;
 }
 
 .pair>.image-container>img {
@@ -421,6 +421,11 @@ ul.fields-list .pair>.image-container>img {
     object-fit: contain;
 
     border-radius: var(--border-radius);
+}
+
+.pair>.image-container>p {
+    font-size: 0.8em;
+    padding: 0.2em;
 }
 
 .pair>.description {
@@ -446,7 +451,12 @@ ul.fields-list .pair>.image-container>img {
 @media screen and (max-width: 1400px) {
 
     .pair>.image-container>img {
-        max-width: 20vb;
+        max-width: 30vb;
+    }
+
+    .pair>.image-container>p {
+        padding: 0.2em;
+        font-size: 0.5em;
     }
 }
 
@@ -477,9 +487,7 @@ ul.fields-list .pair>.image-container>img {
 
     .pair>.image-container>img {
         all: unset;
-        width: 80%;
-        max-width: 25vb;
-        background-color: purple;
+        width: 50%;
     }
 
     .pair>.description {
