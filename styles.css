@@ -477,7 +477,7 @@ ul.fields-list .pair > .image-container > img {
     }
 
     .pair > .disappear-on-responsive ~ .description * {
-        text-align: left;
+        text-align: right;
     }
 
     .pair > .image-container {
