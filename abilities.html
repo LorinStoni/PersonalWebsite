@@ -11,10 +11,32 @@
 </head>
 
 <body>
-<header>
-    <div><a href="index.html" class="header-title">Lorin Steiner</a></div>
 
-    <nav>
+    <header>
+        <div><a href="index.html" class="header-title">Lorin Steiner</a></div>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="aboutMe.html">Über mich</a>
+                </li>
+                <li>
+                    <a class="current" href="abilities.html">Fähigkeiten</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="contact.html">Kontakt</a>
+                </li>
+                <li class="nav-menu-icon" aria-expanded="false">
+                    <i class="icon menu"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="mobile-nav" aria-expanded="false">
         <ul>
             <li>
                 <a href="aboutMe.html">Über mich</a>
@@ -28,151 +50,140 @@
             <li>
                 <a href="contact.html">Kontakt</a>
             </li>
-            <li class="nav-menu-icon" aria-expanded="false">
-                <i class="icon menu"></i>
-            </li>
         </ul>
     </nav>
-</header>
 
-<nav class="mobile-nav" aria-expanded="false">
-    <ul>
-        <li>
-            <a href="aboutMe.html">Über mich</a>
-        </li>
-        <li>
-            <a class="current" href="abilities.html">Fähigkeiten</a>
-        </li>
-        <li>
-            <a href="portfolio.html">Portfolio</a>
-        </li>
-        <li>
-            <a href="contact.html">Kontakt</a>
-        </li>
-    </ul>
-</nav>
+    <main>
+        <h1>Fähigkeiten</h1>
 
-<main>
-    <h1>Fähigkeiten</h1>
+        <p>Meine Fähigkeiten und Stärken sind:</p>
 
-    <p>Meine Fähigkeiten und Stärken sind:</p>
-
-    <ul class="fields-list">
-        <li>
-            <div class="pair description-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_2113w_q6ieph.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159664/personalwebsite/java_example_256w_cfy3fu.png 256w,
+        <ul class="fields-list">
+            <li>
+                <div class="pair description-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_2113w_q6ieph.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159664/personalwebsite/java_example_256w_cfy3fu.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_512w_zcl3xb.png 512w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_2113w_q6ieph.png 2113w"
-                         sizes="(max-width: 800px) 0px, 180px"
-                         alt="Ausschnitt von Java-Code aus einem meiner Projekte">
-                    <p><a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_2113w_q6ieph.png">Originales
-                        Bild</a></p>
+                             sizes="(max-width: 800px) 0px, 180px"
+                             alt="Ausschnitt von Java-Code aus einem meiner Projekte"
+                             loading="lazy">
+                        <p>
+                            <a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159666/personalwebsite/java_example_2113w_q6ieph.png">Originales
+                                Bild</a></p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">Java</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">Java</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="pair image-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_1226w_qjv62r.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159645/personalwebsite/c_example_256w_jecwy5.png 256w,
+            </li>
+            <li>
+                <div class="pair image-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_1226w_qjv62r.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159645/personalwebsite/c_example_256w_jecwy5.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_512w_uh9w5l.png 512w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_1226w_qjv62r.png 1226w"
-                         sizes="(max-width: 800px) 0px, 108px"
-                         alt="Ausschnitt von C-Code aus einem meiner Projekte">
-                    <p><a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_1226w_qjv62r.png">Originales Bild</a></p>
+                             sizes="(max-width: 800px) 0px, 108px"
+                             alt="Ausschnitt von C-Code aus einem meiner Projekte"
+                             loading="lazy">
+                        <p>
+                            <a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159646/personalwebsite/c_example_1226w_qjv62r.png">Originales
+                                Bild</a></p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">C</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">C</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="pair description-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_900w_rx1b36.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159653/personalwebsite/css_example_256w_qyzn8o.png 256w,
+            </li>
+            <li>
+                <div class="pair description-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_900w_rx1b36.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159653/personalwebsite/css_example_256w_qyzn8o.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_512w_wpu7oi.png 512w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_900w_rx1b36.png 900w"
-                         sizes="(max-width: 800px) 0px, 106px"
-                         alt="Ausschnitt von CSS-Code aus einem meiner Projekte">
-                    <p><a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_900w_rx1b36.png">Originales
-                        Bild</a></p>
+                             sizes="(max-width: 800px) 0px, 106px"
+                             alt="Ausschnitt von CSS-Code aus einem meiner Projekte"
+                             loading="lazy">
+                        <p>
+                            <a href="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159656/personalwebsite/css_example_900w_rx1b36.png">Originales
+                                Bild</a></p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">HTML & CSS</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">HTML & CSS</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="pair image-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161358/personalwebsite/logicalunderstanding_512px_otstzd.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161353/personalwebsite/logicalunderstanding_64px_mhkq8i.png 64w,
+            </li>
+            <li>
+                <div class="pair image-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161358/personalwebsite/logicalunderstanding_512px_otstzd.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161353/personalwebsite/logicalunderstanding_64px_mhkq8i.png 64w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161351/personalwebsite/logicalunderstanding_128px_f192br.png 128w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161354/personalwebsite/logicalunderstanding_256px_ep1zqj.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161358/personalwebsite/logicalunderstanding_512px_otstzd.png 512w"
-                         sizes="(max-width: 800px) 0px, 128px"
-                         alt="Kopf mit Zahnrad">
-                    <p>
-                        <a href="https://www.flaticon.com/de/kostenlose-icons/kopf" title="Kopf Icons">
-                            Kopf Icons erstellt von Freepik - Flaticon, 21.05.2024
-                        </a>
-                    </p>
+                             sizes="(max-width: 800px) 0px, 128px"
+                             alt="Kopf mit Zahnrad"
+                             loading="lazy">
+                        <p>
+                            <a href="https://www.flaticon.com/de/kostenlose-icons/kopf" title="Kopf Icons">
+                                Kopf Icons erstellt von Freepik - Flaticon, 21.05.2024
+                            </a>
+                        </p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">logisches Verständnis</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">logisches Verständnis</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="pair description-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161350/personalwebsite/mathematicboard_512px_pi12ae.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161353/personalwebsite/logicalunderstanding_64px_mhkq8i.png 64w,
+            </li>
+            <li>
+                <div class="pair description-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161350/personalwebsite/mathematicboard_512px_pi12ae.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161353/personalwebsite/logicalunderstanding_64px_mhkq8i.png 64w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161360/personalwebsite/mathematicboard_128px_a3t0ol.png 128w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161359/personalwebsite/mathematicboard_256px_psayt2.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717161350/personalwebsite/mathematicboard_512px_pi12ae.png 512w"
-                         sizes="(max-width: 800px) 0px, 128px"
-                         alt="Tafel mit mathematischen Formeln">
-                    <p>
-                        <a href="https://www.flaticon.com/de/kostenlose-icons/mathematik" title="Mathematik Icons">
-                            Mathematik Icons erstellt von Freepik - Flaticon, 21.05.2024
-                        </a>
-                    </p>
+                             sizes="(max-width: 800px) 0px, 128px"
+                             alt="Tafel mit mathematischen Formeln"
+                             loading="lazy">
+                        <p>
+                            <a href="https://www.flaticon.com/de/kostenlose-icons/mathematik" title="Mathematik Icons">
+                                Mathematik Icons erstellt von Freepik - Flaticon, 21.05.2024
+                            </a>
+                        </p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">mathematisches Flair</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">mathematisches Flair</p>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="pair image-first">
-                <div class="image-container disappear-on-responsive">
-                    <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159661/personalwebsite/goal_512px_zngbcc.png"
-                         srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159657/personalwebsite/goal_64px_nx3k0k.png 64w,
+            </li>
+            <li>
+                <div class="pair image-first">
+                    <div class="image-container disappear-on-responsive">
+                        <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159661/personalwebsite/goal_512px_zngbcc.png"
+                             srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717159657/personalwebsite/goal_64px_nx3k0k.png 64w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159658/personalwebsite/goal_128px_icmgnd.png 128w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159660/personalwebsite/goal_256px_djojvx.png 256w,
                                  https://res.cloudinary.com/dwqvputuk/image/upload/v1717159661/personalwebsite/goal_512px_zngbcc.png 512w"
-                         sizes="(max-width: 800px) 0px, 128px"
-                         alt="ToDo-Liste mit Zielscheibe">
-                    <p>
-                        <a href="https://www.flaticon.com/de/kostenlose-icons/ziele" title="Ziele Icons">
-                            Ziele Icons erstellt von Freepik - Flaticon, 21.05.2024
-                        </a>
-                    </p>
+                             sizes="(max-width: 800px) 0px, 128px"
+                             alt="ToDo-Liste mit Zielscheibe"
+                             loading="lazy">
+                        <p>
+                            <a href="https://www.flaticon.com/de/kostenlose-icons/ziele" title="Ziele Icons">
+                                Ziele Icons erstellt von Freepik - Flaticon, 21.05.2024
+                            </a>
+                        </p>
+                    </div>
+                    <div class="description">
+                        <p class="key-word">zielstrebig, ehrgeizig und pflichtbewusst</p>
+                    </div>
                 </div>
-                <div class="description">
-                    <p class="key-word">zielstrebig, ehrgeizig und pflichtbewusst</p>
-                </div>
-            </div>
-        </li>
-    </ul>
-</main>
+            </li>
+        </ul>
+    </main>
 </body>
 
 </html>

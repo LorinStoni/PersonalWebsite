@@ -12,10 +12,31 @@
 
 <body>
 
-<header>
-    <div><a href="index.html" class="header-title">Lorin Steiner</a></div>
+    <header>
+        <div><a href="index.html" class="header-title">Lorin Steiner</a></div>
 
-    <nav>
+        <nav>
+            <ul>
+                <li>
+                    <a class="current" href="aboutMe.html">Über mich</a>
+                </li>
+                <li>
+                    <a href="abilities.html">Fähigkeiten</a>
+                </li>
+                <li>
+                    <a href="portfolio.html">Portfolio</a>
+                </li>
+                <li>
+                    <a href="contact.html">Kontakt</a>
+                </li>
+                <li class="nav-menu-icon" aria-expanded="false">
+                    <i class="icon menu"></i>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav class="mobile-nav" aria-expanded="false">
         <ul>
             <li>
                 <a class="current" href="aboutMe.html">Über mich</a>
@@ -29,55 +50,35 @@
             <li>
                 <a href="contact.html">Kontakt</a>
             </li>
-            <li class="nav-menu-icon" aria-expanded="false">
-                <i class="icon menu"></i>
-            </li>
         </ul>
     </nav>
-</header>
 
-<nav class="mobile-nav" aria-expanded="false">
-    <ul>
-        <li>
-            <a class="current" href="aboutMe.html">Über mich</a>
-        </li>
-        <li>
-            <a href="abilities.html">Fähigkeiten</a>
-        </li>
-        <li>
-            <a href="portfolio.html">Portfolio</a>
-        </li>
-        <li>
-            <a href="contact.html">Kontakt</a>
-        </li>
-    </ul>
-</nav>
+    <main>
+        <h1>Über mich</h1>
 
-<main>
-    <h1>Über mich</h1>
-
-    <div class="pair image-first column-on-responsive">
-        <div class="image-container">
-            <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161446/personalwebsite/portrait_256w_lhpbj3.jpg"
-                 srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161448/personalwebsite/portrait_128w_mb0bsy.jpg 128w,
+        <div class="pair image-first column-on-responsive">
+            <div class="image-container">
+                <img src="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161446/personalwebsite/portrait_256w_lhpbj3.jpg"
+                     srcset="https://res.cloudinary.com/dwqvputuk/image/upload/v1717161448/personalwebsite/portrait_128w_mb0bsy.jpg 128w,
                          https://res.cloudinary.com/dwqvputuk/image/upload/v1717161446/personalwebsite/portrait_256w_lhpbj3.jpg 256w"
-                 sizes="(max-width: 800px) 220px,
+                     sizes="(max-width: 800px) 220px,
                         (max-width: 1400px) 190px,
                         300px"
-                 alt="Portrait von mir, Lorin Steiner">
+                     alt="Portrait von mir, Lorin Steiner"
+                     loading="lazy">
+            </div>
+            <div class="description">
+                <h2>Biographie</h2>
+                <p>Ich wurde am 7. November 2007 geboren und lebe in der Schweiz.</p>
+                <p>In der Sekundarschule entdeckte ich meine Leidenschaft für das Programmieren und bewarb mich um eine
+                    Lehrstelle bei der Abacus Research AG als Informatiker Fachrichtung Applikationsentwicklung.</p>
+                <p>Diese Lehrstelle trat ich dann im August 2023 an. Im ersten Jahr bei der Abacus lernte ich viel über
+                    die beiden Programmiersprachen C und Java.</p>
+                <p>Ab dem zweiten Lehrjahr arbeite ich dann in einem Team am produktiven Code der Abacus Business
+                    Software.</p>
+            </div>
         </div>
-        <div class="description">
-            <h2>Biographie</h2>
-            <p>Ich wurde am 7. November 2007 geboren und lebe in der Schweiz.</p>
-            <p>In der Sekundarschule entdeckte ich meine Leidenschaft für das Programmieren und bewarb mich um eine
-                Lehrstelle bei der Abacus Research AG als Informatiker Fachrichtung Applikationsentwicklung.</p>
-            <p>Diese Lehrstelle trat ich dann im August 2023 an. Im ersten Jahr bei der Abacus lernte ich viel über
-                die beiden Programmiersprachen C und Java.</p>
-            <p>Ab dem zweiten Lehrjahr arbeite ich dann in einem Team am produktiven Code der Abacus Business
-                Software.</p>
-        </div>
-    </div>
-</main>
+    </main>
 
 </body>
 
